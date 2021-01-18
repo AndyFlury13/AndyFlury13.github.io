@@ -373,7 +373,7 @@ body {
 
 
 .entry {
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   font-size: 1.35vw;
   position: relative;
@@ -382,6 +382,7 @@ body {
   border-color: grey;
   top: 100px;
   color: black;
+  height: 4.5vw;
 }
 
 .entry-text {
@@ -390,13 +391,9 @@ body {
 }
 
 .date {
-  height: 100%;
-  right: -30px;
-  width: 200px;
-  top:10;
   position: absolute;
-  font-size: 1.1vw;
-  margin-right: 7%;
+  right: 30px;
+  top: 50%;
 }
 
 
