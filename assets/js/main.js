@@ -263,8 +263,10 @@
 
 		$menu._hide = function() {
 
-			if ($menu._lock())
+			if ($menu._lock()) {
+			  $(".coursework_links").slideUp();
 				$body.removeClass('is-menu-visible');
+			}
 
 		};
 
@@ -278,22 +280,22 @@
 		$menuInner
 			.on('click', function(event) {
 				event.stopPropagation();
+
 			})
 			.on('click', 'a', function(event) {
 
 				var href = $(this).attr('href');
-
+				var id = $(this).attr('id');
 				event.preventDefault();
 				event.stopPropagation();
 
 				// Hide.
 					$menu._hide();
-
+					$(".coursework_links").slideUp();
 				// Redirect.
 					window.setTimeout(function() {
 						window.location.href = href;
 					}, 250);
-
 			});
 
 		$menu
@@ -302,7 +304,8 @@
 
 				event.stopPropagation();
 				event.preventDefault();
-
+				console.log('menu on test');
+				$(".coursework_links").slideUp();
 				$body.removeClass('is-menu-visible');
 
 			})
@@ -310,7 +313,6 @@
 
 		$body
 			.on('click', 'a[href="#menu"]', function(event) {
-
 				event.stopPropagation();
 				event.preventDefault();
 
@@ -319,9 +321,10 @@
 
 			})
 			.on('click', function(event) {
-
 				// Hide.
 					$menu._hide();
+
+
 
 			})
 			.on('keydown', function(event) {
@@ -329,7 +332,51 @@
 				// Hide on escape.
 					if (event.keyCode == 27)
 						$menu._hide();
+						console.log("test 1");
+						$(".coursework_links").slideUp();
 
 			});
 
 })(jQuery);
+
+
+$(document).ready(function() {
+	console.log("doc ready");
+	$("#coursework_menu_btn").click(function() {
+		if ($(".coursework_links").css("display") == "block") {
+			$(".coursework_links").promise().done(function() {
+				$(".coursework_links").slideUp();
+			});
+		} else {
+			$(".coursework_links").promise().done(function() {
+				$(".coursework_links").slideDown();
+			});
+		}
+	});
+
+	$("#coursework").hover(function() {
+		console.log('entering coursework');
+		$("#coursework_image_list").slideDown();
+	}, function() {
+		console.log("leaving coursework");
+		$("#coursework_image_list").slideUp();
+	});
+
+
+	$(".class_label").click(function() {
+		var table_div_name = $(this).attr("id");
+		table_div_name = table_div_name.substring(0, table_div_name.length - 10);
+		console.log(table_div_name);
+		if ($("#" + table_div_name).css("display") == "block") {
+			$("#"+ table_div_name).promise().done(function() {
+				$("#"+ table_div_name).slideUp();
+			});
+		} else {
+			$("#"+ table_div_name).promise().done(function() {
+				$("#"+ table_div_name).slideDown();
+			});
+		}
+	});
+
+
+});
