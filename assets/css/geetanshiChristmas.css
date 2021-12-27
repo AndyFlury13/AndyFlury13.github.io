@@ -1,0 +1,112 @@
+body {
+  background-color: #8a1725;
+}
+
+.card {
+  padding-left: 20%;
+  padding-right:20%;
+  padding-top: 10%;
+  font-size: 3ch;
+  line-height: 2.6em;
+}
+
+.audioPlayer {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.listenToCard {
+  background-color: rgba(8, 115, 38, .9);
+  padding: 17px;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1 1 1;
+  column-gap: 15px;
+  font-size: 2vw;
+}
+
+.afterClickPSSS {
+  display: none;
+}
+
+.pro {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  padding-top: 10px;
+}
+
+.grinchLink {
+  border-bottom: 2px dashed white;
+}
+
+.grinchLink:after {
+  transition: all ease-in-out .2s;
+  background: none repeat scroll 0 0 #ffffff;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  position:relative;
+  top: -16px;
+  left:300px;
+}
+.grinchLink:hover {
+  cursor: pointer;
+}
+
+.grinchLink:hover:after {
+  width:230px;
+  position:relative;
+  top: -16px;
+  left:300px;
+  cursor: pointer;
+
+}
+
+.con {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  padding-top: 10px;
+}
+
+.poem {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 26px;
+}
+
+
+
+
+.tidQuotes {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.bigQuote {
+  font-size: 6ch;
+  font-weight: bold;
+}
+
+.bigQuote2 {
+  font-size: 6ch;
+  font-weight: bold;
+  position: relative;
+  left: 95%;
+}
+
+.tab { margin-left: 40px; }
+
+p {
+   text-indent: 30px;
+   margin: 0;
+   padding: 0;
+}
+
+img {
+    display:block;
+    margin:auto;
+    margin-bottom: 20px;
+}
